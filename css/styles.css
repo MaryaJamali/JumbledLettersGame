@@ -60,15 +60,20 @@ body {
 }
 
 .guess-input {
-    display: none;
     padding: 10px;
     margin-right: 10px;
+    border: 2px solid #005e08a4;
+    border-radius: 4px;
+}
+
+.hidden{
+    display: none;
 }
 
 .guess-btn {
     padding: 10px 20px;
     background-color: #04500ace;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     cursor: pointer;
     border: none;
