@@ -11,6 +11,7 @@ const wordArray = [
     "pizza", "burger", "pasta", "sushi", "cake", "icecream", "sandwich", "soup", "salad",
     "javascript", "python", "django", "html", "css", "react", "angular", "php", "nodejs", "mongodb"
 ];
+
 // Game start mode
 let inPlay = false;
 // Add event to button
@@ -29,10 +30,23 @@ function gameStart() {
 }
 
 function createWord() {
-    // // Generate random integers between arrays
+    // Generate random integers between arrays
     let randomIndex = Math.floor(Math.random() * wordArray.length);
     // Find word based on random number
-    let tempWord = wordArray[randomIndex];
-    return tempWord;
+    let mainWord = wordArray[randomIndex];
+    return mainWord;
+}
 
+function randomArray(array) {
+
+    for (let i = array.length - 1; i > 0; i--) {
+        // We separate the letters of the word from the end, for example "mina" --> "a" "n" "i" "m" 
+        let temp = array[i];
+        // Generate random integers between arrays of the original word that are the same letters as the original word
+        let w = Math.floor(Math.random() * (i + 1));
+        // Replace the member that the loop is inside i.e. "i" with the member w which is a random number to create clutter.
+        array[i] = array[w];
+        array[w] = temp;
+    }
+    return array;
 }
