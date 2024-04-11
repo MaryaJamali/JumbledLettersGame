@@ -14,6 +14,9 @@ const wordArray = [
 
 // Game start mode
 let inPlay = false;
+let correctWord = "";
+let scrambled = "";
+let score = 0;
 // Add event to button
 button.addEventListener("click", gameStart);
 
@@ -25,9 +28,27 @@ function gameStart() {
         button.innerHTML = "Guess";
         // If the class is "hidden", remove the class & If the class is not "hidden", insert the class
         guess.classList.toggle("hidden");
+        guess.value = "";
+        correctWord = createWord();
+        // takes the correct word, separates it, mixes the letters using the desired function, and finally glues them together
+        scrambled = randomArray(correctWord.split("")).join("");
+        message.innerHTML = scrambled;
+    } else {
+        // Get the user's guess
+        let tempGuess = guess.value;
+        score++;
+        if (tempGuess === correctWord) {
+            inPlay = false;
+            message.innerHTML = " Well done, you guessed right.the correct word was " + correctWord + " You could answer with " + score + " guesses";
+            button.innerHTML = "Start Game";
+            guess.classList.toggle("hidden");
+        }
+        else {
+            message.innerHTML = "Wow, the word you guessed " + scrambled + " It is wrong my friend.";
+        }
 
     }
-}
+};
 
 function createWord() {
     // Generate random integers between arrays
