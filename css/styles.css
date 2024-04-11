@@ -59,6 +59,13 @@ body {
     font-size: 14px;
 }
 
+.guess-message {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
 .guess-input {
     padding: 10px;
     margin-right: 10px;
