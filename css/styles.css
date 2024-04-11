@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #b2ffbf;
+}
+
+.container {
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    border: 2px solid #4ea74b;
+    border-radius: 10px;
+    background-color: #cefdc1;
+}
+
+.title {
+    margin-top: 0;
+    color: #0c300b;
+    position: relative;
+    display: inline-block;
+}
+
+.question-icon {
+    margin-right: 15px;
+}
+
+.question-icon::after {
+    content: "❔";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    font-size: 20px;
+    transform: translateY(-50%) rotateY(0deg);
+    animation: rotateAnimation 4s infinite linear;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: translateY(-50%) rotateY(0deg);
+    }
+
+    100% {
+        transform: translateY(-50%) rotateY(360deg);
+    }
+}
+
