@@ -2,7 +2,7 @@
 const message = document.querySelector(".guess-message");
 const guess = document.querySelector(".guess-input");
 const button = document.querySelector(".guess-btn");
-const Array = [
+const wordArray = [
     "maryam", "reyhaneh", "leila", "sophia", "soraya", "darya", "giso", "fatima", "sahar", "zainab",
     "ali", "reza", "amir", "mahmood", "morteza", "saeed", "sajad", "hossein", "nima", "abbas",
     "doctor", "engineer", "artist", "teacher", "pilot", "chef", "programmer", "dentist", "photographer", "athlete",
@@ -26,4 +26,13 @@ function gameStart() {
         guess.classList.toggle("hidden");
 
     }
+}
+
+function createWord() {
+    // // Generate random integers between arrays
+    let randomIndex = Math.floor(Math.random() * wordArray.length);
+    // Find word based on random number
+    let tempWord = wordArray[randomIndex];
+    return tempWord;
+
 }
